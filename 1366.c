@@ -10,7 +10,7 @@ int main ()
 	{
 		for (j=0; j<n; j++)
 		{
-			if (j==0 || j==i || j==n-i || j==n-1)
+			if (j==0 || j==i || j==n-1-i || j==n-1 || j==n/2 || i==n/2)
 				printf("*");
 			else 	
 				printf(" ");
