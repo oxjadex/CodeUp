@@ -5,3 +5,4 @@ print(dict.get(a,"D"))
          
 
 
+  
