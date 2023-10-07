@@ -1,9 +1,8 @@
 def ssmm(n, cnt):
     if not n:
         return cnt
-    else:
-        cnt += n.pop()
-        return ssmm(n, cnt)
+    cnt += n.pop()
+    return ssmm(n, cnt)
 
 
 cnt = 0
