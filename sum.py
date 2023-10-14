@@ -1,5 +1,3 @@
-
-
 def ssmm(n, cnt):
     if not n:
         return cnt
