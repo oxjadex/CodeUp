@@ -2,7 +2,7 @@ def pr(list):
     if not list:
         return  # 리스트가 비어있으면 재귀를 종료합니다.
     else:
-        print(list.pop())
+        print(list.pop(), end=" ")
         pr(list)  # 재귀 호출
 
 
