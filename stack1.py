@@ -4,10 +4,7 @@ top = -1
 
 
 def isEmpty():
-    if top == -1:
-        return True
-    else:
-        return False
+    return top == -1
 
 
 def isFull():
@@ -17,21 +14,22 @@ def isFull():
 def push(e):
     global top
     if not isFull():
-        list.append(e)
+        top += 1
+        list[top] = e
 
 
 def pop():
+    global top
     if not isEmpty():
-        print(list[top])
+        popped_element = list[top]
         list[top] = None
         top -= 1
+        return popped_element
 
 
 def peek():
     if not isEmpty():
-        print(list[top])
-    else:
-        pass
+        return list[top]
 
 
 push(1)
