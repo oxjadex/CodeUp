@@ -5,7 +5,7 @@ rear = 0
 
 
 def isEmpty():
-    if rear % q_size == 0:
+    if (front == rear):
         print("Empty")
         return True
 
@@ -37,11 +37,12 @@ def deQueue():
         print("잘나감")
 
 
-enQueue(1)
-enQueue(2)
 enQueue(3)
 enQueue(4)
 enQueue(5)
+enQueue(6)
+enQueue(7)
+enQueue(8)
 
 deQueue()
 enQueue(6)
