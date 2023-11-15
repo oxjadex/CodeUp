@@ -1,49 +1,45 @@
-q_size = 5
-list = [None]*q_size
+Queue_Size = 5
+list = [None]*Queue_Size
 front = 0
 rear = 0
 
 
-def isEmpty():
-    if (front == rear):
-        print("Empty")
-        return True
-
-    else:
-        return False
+def is_Empty():
+    return front == rear
 
 
-def isFull():
-    if rear == q_size:
-        print("Full")
-
-        return True
-    else:
-        return False
+def is_Full():
+    return (rear+1) % Queue_Size == front
 
 
-def enQueue(e):
-    global front, rear
-    if not isFull():
-        list[rear] = e
-        rear += 1
+def Enqueue(e):
+    global rear, front
+    if is_Full():
+        return print("Queue is Full")
+    rear = (rear+1) % Queue_Size
+    list[rear] = e
+    return
 
 
-def deQueue():
-    global front, rear
-    if not isEmpty():
-        list[front] = None
-        front += 1
-        print("잘나감")
+def Dequeue():
+    global rear, front
+    if is_Empty():
+        return print("Queue is Empty")
+    list[(front+1) % Queue_Size] = None
+    return
 
 
-enQueue(3)
-enQueue(4)
-enQueue(5)
-enQueue(6)
-enQueue(7)
-enQueue(8)
-
-deQueue()
-enQueue(6)
+Enqueue(1)
+print(list)
+Enqueue(2)
+print(list)
+Enqueue(3)
+print(list)
+Enqueue(4)
+print(list)
+Enqueue(5)
+print(list)
+Dequeue()
+print(list)
+Enqueue(6)
 print(list)
