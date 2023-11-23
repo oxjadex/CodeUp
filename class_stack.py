@@ -1,11 +1,12 @@
 class MyStack:
     top = -1
     stack_size = 5
+
     def __init__(self):
-        self._items = []
+        self.items = []
 
     def isFull(self, top):
-        return top == stack_size-1
+        return self.top == self.stack_size
     
     def isEmpty(self, top):
-        return top == -1
+        return self.top == -1

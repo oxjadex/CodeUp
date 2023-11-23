@@ -4,39 +4,52 @@ top = -1
 
 
 def isEmpty():
-    return top == -1
+    global top
+    if top == -1:
+        return True
+    return False
 
 
 def isFull():
-    return top == stack_size-1
+    global top
+    if top == stack_size-1:
+        return True
+    return False
 
 
 def push(e):
     global top
-    if not isFull():
-        top += 1
-        list[top] = e
+    if isFull():
+        return print("스텍이 꽉 차있습니다.")
+    top += 1
+    list[top] = e
 
 
 def pop():
     global top
-    if not isEmpty():
-        popped_element = list[top]
-        list[top] = None
-        top -= 1
-        return popped_element
+    if isEmpty():
+        return print("스텍이 비어있습니다.")
+    list[top]=None
+    top -= 1
+
 
 
 def peek():
+    global top
     if not isEmpty():
-        return list[top]
+        return print(list[top])
+    else:
+        pass
 
 
 push(1)
 push(2)
 push(3)
-pop()
 push(4)
+push(5)
+pop()
+pop()
+pop()
 peek()
 
 print(list)
