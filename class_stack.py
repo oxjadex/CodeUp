@@ -22,7 +22,7 @@ class MyStack:
         if self.isEmpty():
             return print("스텍이 비어있습니다")
         self.list[self.top]=None
-        self.top=-1
+        self.top-=1
 
     def peek(self):
         if not self.isEmpty():
