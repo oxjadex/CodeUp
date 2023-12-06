@@ -5,21 +5,23 @@ class Deque:
         self.rear = 0
         self.list = [None] * capacity
 
-    def isFull(self, capacity):
-        return len(self.list) == capacity
+    def isFull(self):
+        return len(self.list) == self.capacity
 
     def isEmpty(self):
-        return not bool(self.list)
+        return len(self.list) == 0
 
     def AddFront(self, item):
         if self.isFull():
             return print("IndexError: Dequeue is full")
-        self.front = item
+        self.front += 1
+        self.list[self.front] = item
 
     def DeletFront(self):
         if self.isEmpty():
             return print("IndexError: Dequeue is empty")
-        return self.front == None
+        self.front -= 1
+        self.list[self.front] = None
 
     def GetFront(self):
         return print(self.front)
@@ -27,15 +29,18 @@ class Deque:
     def AddRear(self, item):
         if self.isFull():
             return print("IndexError: Dequeue is full")
-        self.rear = item
+        self.rear += 1
+        self.list[self.rear] = item
+        print(self.list[self.rear])
 
     def DeletRear(self):
         if self.isEmpty():
             return print("IndexError: Dequeue is empty")
-        return self.rear == None
+        self.rear += 1
+        self.list[self.rear] = None 
 
     def GetRear(self):
-        return print(self.rear)
+        return print(self.list[self.rear])
 
 
 deque = Deque()

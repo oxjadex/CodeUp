@@ -10,6 +10,14 @@
       "justMyCode": true
     },
     {
+      "name": "Python: 현재 파일",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
       "name": "Python C++ Debugger",
       "type": "pythoncpp",
       "request": "launch",
