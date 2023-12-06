@@ -2,6 +2,62 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python: 현재 파일",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python C++ Debugger",
+      "type": "pythoncpp",
+      "request": "launch",
+      "pythonLaunchName": "Python: Current File",
+      "cppAttachName": "'(Windows) Attach' or '(gdb) Attach'"
+    },
+    {
+      "name": "Python: 현재 파일",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "(gdb) Windows 연결의 Bash",
+      "type": "cppdbg",
+      "request": "attach",
+      "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
+      "processId": "${command:pickRemoteProcess}",
+      "pipeTransport": {
+        "debuggerPath": "/usr/bin/gdb",
+        "pipeProgram": "${env:windir}\\system32\\bash.exe",
+        "pipeArgs": ["-c"],
+        "pipeCwd": ""
+      },
+      "setupCommands": [
+        {
+          "description": "gdb에 자동 서식 지정 사용",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "디스어셈블리 버전을 Intel(으)로 설정",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Python: 현재 파일",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
