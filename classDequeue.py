@@ -3,13 +3,13 @@ class Deque:
         self.capacity = capacity
         self.front = 0
         self.rear = 0
-        self.list = [None] * capacity
+        self.list = [None] *self.capacity
 
     def isFull(self):
-        return len(self.list) == self.capacity
+        return self.front == self.capacity-1 or self.rear == 0
 
     def isEmpty(self):
-        return len(self.list) == 0
+        return self.rear == self.capacity and self.front == -1
 
     def AddFront(self, item):
         if self.isFull():
@@ -24,7 +24,7 @@ class Deque:
         self.list[self.front] = None
 
     def GetFront(self):
-        return print(self.front)
+        return self.list(self.front)
 
     def AddRear(self, item):
         if self.isFull():
